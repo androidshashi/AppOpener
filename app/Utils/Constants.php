@@ -30,5 +30,6 @@ final class RouteConstants
 final class CommonConstants
 {
     public const SITE_NAME = "P-Link.me";
+    public const CONTACT_EMAIL = "CONTACT@EMAIL.COM";
 
 }

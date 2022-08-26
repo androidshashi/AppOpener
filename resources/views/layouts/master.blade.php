@@ -10,18 +10,12 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <title>@yield('title')</title>
     <script src="{{asset('frontend/js/index.js')}}"></script>
-    <style>
-        footer {
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
-
-    </style>
+    
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 </head>
 
 <body>
-    <nav class="navbar navbar-default">
+    <nav class="navbar navbar-inverse">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -49,17 +43,21 @@
         </div>
     </nav>
     @yield('content')
-
-    <footer class="bg-light text-center text-lg-start">
+    <!-- vertical space -->
+    <div style="height: 50px;"></div>
+    <footer class="bg-inverse text-center text-lg-start">
 
         <!-- Copyright -->
-        <div class="text-center p-3" style="background-color: #dff4f7;">
-            © {{date('Y')}} Copyright:
-            <a class="text-light" href="{{url('/')}}">{{url('/')}}</a>
+        <div class="text-center p-3" style="background-color: #303030">
+
+            <span><a class="text-light" style="color:white" href="{{url('/')}}">&nbsp;&nbsp; &nbsp;About Us</a></span>
+            <span><a class="text-light" style="color:white" href="{{url('/')}}"> &nbsp;&nbsp;&nbsp;Contact Us</a></span>
+            <span><a class="text-light" style="color:white" href="{{url('/')}}"> &nbsp;&nbsp;&nbsp;Privacy Policy</a></span>
+            <span><a class="text-light" style="color:white" href="{{url('/')}}">&nbsp;&nbsp; &nbsp;Terms & Conditions&nbsp;&nbsp; &nbsp;</a></span>
+            <span style="color:white">© {{date('Y')}} Copyright: </span>
+            <a class="text-light" style="color:white" href="{{url('/')}}">{{url('/')}}</a>
         </div>
         <!-- Copyright -->
-
-
     </footer>
 </body>
 

@@ -72,7 +72,7 @@ class Shortener
     protected function urlExistsInDB($url)
     {
 
-        $result =  ShortUrls::where(TableConstants::LONG_URL, $url)->value(TableConstants::SHORT_CODE);
+        $result =  ShortUrls::where(TableConstants::LONG_URL, $url)->where(TableConstants::USER_ID,null)->value(TableConstants::SHORT_CODE);
 
         return (empty($result)) ? false : $result;
     }

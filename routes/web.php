@@ -27,3 +27,7 @@ Route::get('/p/data', function () {
     echo "<pre>";
     print_r($urls->toArray());
 });
+
+Route::get('/p/test',function(){
+    return view('homepage');
+});

@@ -6,6 +6,7 @@
     window.location = "{{$urlData->longUrl}}"
 </script>
 <script src="{{asset('frontend/js/shortcode.js')}}"></script>
+<link rel="stylesheet" href="{{asset('frontend/css/home.css')}}"></link>
 <div class="container">
 
     <div class="jumbotron">

@@ -7,6 +7,7 @@ use App\Models\ShortUrls;
 use App\Utils\Constants\RouteConstants;
 use App\Utils\Shortener;
 use App\Utils\Constants\TableConstants;
+use App\Utils\Constants\CommonConstants;
 
 class ShortcodeController extends Controller
 {
@@ -19,15 +20,22 @@ class ShortcodeController extends Controller
          * Check for pages 
          */
         if ($shortCode == RouteConstants::PAGE_ABOUT) {
-            return  view('about');
+            $siteName = CommonConstants::SITE_NAME;
+            $data = compact('siteName');
+            return  view('about')->with($data);
         }
 
         if ($shortCode == RouteConstants::PAGE_CONTACT_US) {
-            return  view('contactus');
+            $contactEmail = CommonConstants::CONTACT_EMAIL;
+            $data = compact('contactEmail');
+            return  view('contactus')->with($data);
         }
 
         if ($shortCode == RouteConstants::PAGE_PRIVACY_POLICY) {
-            return  view('policy');
+            $siteName = CommonConstants::SITE_NAME;
+            $contactEmail = CommonConstants::CONTACT_EMAIL;
+            $data = compact('siteName','contactEmail');
+            return  view('policy')->with($data);
         }
 
         /**
@@ -66,6 +74,8 @@ class ShortcodeController extends Controller
         //
         $urlData =  $shortener->urlToShortCode($longUrl);
         
+        $urlData->totalLinks =  ShortUrls::count();
+
         $data = compact('urlData');
 
         return view('home')->with($data);

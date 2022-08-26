@@ -1,0 +1,11 @@
+
+.jumbotron{
+    background-color: #303030;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    margin-top: 50px;
+    width: 100%;
+}

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ShortUrls;
 use Illuminate\Http\Request;
 use App\Utils\Constants\TableConstants;
 use App\Utils\Constants\RouteConstants;
@@ -15,11 +16,9 @@ class HomeController extends Controller
      */
     function index()
     {
-        $urlData = new UrlData();
+        $totalUrls = ShortUrls::count();
+        $urlData = new UrlData(totalLinks:$totalUrls);
         $data = compact('urlData');
-    
         return view('home')->with($data);
     }
-
-   
 }
